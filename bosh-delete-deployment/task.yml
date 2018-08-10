@@ -5,7 +5,7 @@ image_resource:
   type: docker-image
   source:
     repository: relintdockerhubpushbot/cf-deployment-concourse-tasks
-    tag: v5.15.0
+    tag: v5.16.0
 
 inputs:
 - name: bbl-state # - The env repo containing the Director's bbl state dir
@@ -22,3 +22,7 @@ params:
   # - If the specified path does not exist, it will be created
 
   DEPLOYMENT_NAME: cf
+
+  IGNORE_ERRORS: false
+  # - Optional
+  # - When true, passes the `--force` flag to the delete-deployment BOSH command
